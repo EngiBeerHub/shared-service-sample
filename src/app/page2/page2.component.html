@@ -1,4 +1,4 @@
 <h1>Page 2</h1>
-<input type="text" [(ngModel)]="textValue" />
+<app-input-field (textValueChange)="textValueChanged($event)"></app-input-field>
 <button (click)="navigateToPage3()">Go to Page 3</button>
 <button (click)="goBack()">Go Back</button>

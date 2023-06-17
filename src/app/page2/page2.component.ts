@@ -24,6 +24,10 @@ export class Page2Component implements OnInit {
     }
   }
 
+  textValueChanged(value: string) {
+    this.textValue = value;
+  }
+
   navigateToPage3() {
     this.sharedService.setTextValue(this.textValue);
     this.router.navigate(['/page3']);
