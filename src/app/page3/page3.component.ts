@@ -1,17 +1,23 @@
 import { Location } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { SharedService } from '../shared.service';
 
 @Component({
   selector: 'app-page3',
   templateUrl: './page3.component.html',
   styleUrls: ['./page3.component.scss'],
 })
-export class Page3Component {
-  constructor(private router: Router, private location: Location) {}
+export class Page3Component implements OnInit {
+  textValue = '';
 
-  navigateToPage3() {
-    this.router.navigate(['/page3']);
+  constructor(
+    private location: Location,
+    private sharedService: SharedService
+  ) {}
+
+  ngOnInit(): void {
+    this.textValue = this.sharedService.getTextValue();
   }
 
   goBack() {
