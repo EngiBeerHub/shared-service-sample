@@ -1,4 +1,5 @@
 <h1>Page 2</h1>
 <app-input-field (textValueChange)="textValueChanged($event)"></app-input-field>
+<app-radio-buttons [selectedOption]="radioButtonSelection" (selectionChange)="radioButtonChanged($event)"></app-radio-buttons>
 <button (click)="navigateToPage3()">Go to Page 3</button>
 <button (click)="goBack()">Go Back</button>

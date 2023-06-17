@@ -10,6 +10,7 @@ import { SharedService } from '../shared.service';
 })
 export class Page3Component implements OnInit {
   textValue = '';
+  radioButtonSelection: string = '';
 
   constructor(
     private location: Location,
@@ -18,6 +19,7 @@ export class Page3Component implements OnInit {
 
   ngOnInit(): void {
     this.textValue = this.sharedService.getTextValue();
+    this.radioButtonSelection = this.sharedService.getRadioValue();
   }
 
   goBack() {

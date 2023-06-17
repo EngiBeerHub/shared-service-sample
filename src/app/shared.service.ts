@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class SharedService {
   private textValue: string = '';
+  private radioButtonSelection: string = '';
 
   constructor() {}
 
@@ -16,7 +17,16 @@ export class SharedService {
     return this.textValue;
   }
 
-  clearTextValue() {
+  clearValue() {
     this.textValue = '';
+    this.radioButtonSelection = '';
+  }
+
+  setRadioValue(value: string) {
+    this.radioButtonSelection = value;
+  }
+
+  getRadioValue() {
+    return this.radioButtonSelection;
   }
 }

@@ -1,0 +1,21 @@
+<div>
+  <input
+    type="radio"
+    name="options"
+    id="option1"
+    value="Option1"
+    [(ngModel)]="selectedOption"
+    (change)="selectOption('Option1')"
+  />
+  <label for="option1">Option 1</label>
+
+  <input
+    type="radio"
+    name="options"
+    id="option2"
+    value="Option2"
+    [(ngModel)]="selectedOption"
+    (change)="selectOption('Option2')"
+  />
+  <label for="option2">Option 2</label>
+</div>

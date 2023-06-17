@@ -9,7 +9,8 @@ import { SharedService } from '../shared.service';
   styleUrls: ['./page2.component.scss'],
 })
 export class Page2Component implements OnInit {
-  textValue = '';
+  textValue: string = '';
+  radioButtonSelection: string = '';
 
   constructor(
     private router: Router,
@@ -19,8 +20,12 @@ export class Page2Component implements OnInit {
 
   ngOnInit(): void {
     const savedTextValue = this.sharedService.getTextValue();
+    const savedRadioValue = this.sharedService.getRadioValue();
     if (savedTextValue) {
       this.textValue = savedTextValue;
+    }
+    if (savedRadioValue) {
+      this.radioButtonSelection = savedRadioValue;
     }
   }
 
@@ -28,12 +33,18 @@ export class Page2Component implements OnInit {
     this.textValue = value;
   }
 
+  radioButtonChanged(value: string) {
+    this.radioButtonSelection = value;
+  }
+
   navigateToPage3() {
     this.sharedService.setTextValue(this.textValue);
+    this.sharedService.setRadioValue(this.radioButtonSelection);
     this.router.navigate(['/page3']);
   }
+
   goBack() {
-    this.sharedService.clearTextValue();
+    this.sharedService.clearValue();
     this.location.back();
   }
 }
